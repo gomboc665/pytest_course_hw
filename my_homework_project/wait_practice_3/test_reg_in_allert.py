@@ -5,15 +5,12 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_add(driver,wait):
     # Инициализация драйвера
-    
-    # Открываем веб-страницу с HTTP-авторизацией
-    driver.get("https://the-internet.herokuapp.com/basic_auth")
+    username = 'admin'
+    password = 'admin'
+    url = f'https://{username}:{password}@the-internet.herokuapp.com/ basic_auth'
     
     # Вводим логин и пароль с помощью pyautogui
-    pyautogui.write("admin")
-    pyautogui.press("tab")
-    pyautogui.write("admin")
-    pyautogui.press("enter")
+    driver.get(url)
 
     assert wait.until(EC.text_to_be_present_in_element((By.XPATH,'//p'),'Congratulations! You must have the proper credentials.'))
 

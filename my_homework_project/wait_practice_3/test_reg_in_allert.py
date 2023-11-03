@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_add(driver,wait):
     # Инициализация драйвера
-    username = 'admin'
+    username = 'admin' 
     password = 'admin'
     url = f'https://{username}:{password}@the-internet.herokuapp.com/basic_auth'
     

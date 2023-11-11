@@ -17,4 +17,4 @@ jobs:
       run: docker build -t selenium_test_run. 
       
     - name: Run the Docker container
-      run: docker run luma_tests
+      run: docker run selenium_test_run

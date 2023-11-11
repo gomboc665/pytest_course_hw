@@ -23,15 +23,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run tests
-        run: pytest
-        continue-on-error: true
-
-      - name: Set test error
-        run: echo "::error::Tests failed"
-        if: failure()
-
-      - name: Set test warning
-        run: echo "::warning::Tests passed with warnings"
-        if: success() && steps.run-tests.outcome == 'success-with-warnings'
+        run: pytest -v -s
 
 

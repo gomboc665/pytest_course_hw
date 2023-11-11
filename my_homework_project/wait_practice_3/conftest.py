@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import pytest
 
 @pytest.fixture
-def options():
+def chrome_options():
     options = Options()
     options.add_argument('--window-size=2880,1800')
     options.add_argument('--headless')
@@ -16,8 +16,8 @@ def options():
 
 
 @pytest.fixture
-def driver(options):
-    driver = webdriver.Chrome(options=options)
+def driver(chrome_options):
+    driver = webdriver.Chrome(options=chrome_options)
     return driver
 
 
@@ -29,7 +29,7 @@ def wait(driver):
 
 @pytest.fixture
 def driver_imp(chrome_options):
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
     driver.quit()

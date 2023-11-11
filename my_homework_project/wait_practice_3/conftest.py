@@ -16,8 +16,8 @@ def options():
 
 
 @pytest.fixture
-def driver(chrome_options):
-    driver = webdriver.Chrome(options=chrome_options)
+def driver(options):
+    driver = webdriver.Chrome(options=options)
     return driver
 
 

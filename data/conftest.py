@@ -8,9 +8,10 @@ from data.full_data import LOGIN, PASSWORD
 @pytest.fixture(scope="module")
 def chrome_options():
     options = Options()
-    # options.add_argument('--window-size=100,100')
-    options.add_argument('--incognito')
+    options.add_argument('--window-size=2880,1800')
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     return options
 
 @pytest.fixture(scope="function")
